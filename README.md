@@ -30,7 +30,35 @@ Terraform Remote Backend consists of:
   - DynamoDB full access (for specific table)
 
 ---
+# 📸 Verification Screenshots
 
+## 🗂 S3 Bucket (Remote State Storage)
+
+Below screenshot confirms:
+
+- S3 bucket created
+- Versioning enabled
+- Encryption enabled
+- `prod/terraform.tfstate` file present
+
+![S3 Bucket Screenshot](bucket.png)
+
+---
+
+## 🔐 DynamoDB Table (State Locking)
+
+Below screenshot confirms:
+
+- `terraform-state-locks` table exists
+- Lock entry visible during `terraform apply`
+- `LockID = prod/terraform.tfstate`
+
+![DynamoDB Table Screenshot](db-table.png)
+
+---
+
+
+---
 # Step 1 — Create S3 Bucket for Remote State
 
 ## main.tf
