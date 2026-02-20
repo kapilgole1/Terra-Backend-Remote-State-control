@@ -51,7 +51,7 @@ Below screenshot confirms:
 
 - `terraform-state-locks` table exists
 - Lock entry visible during `terraform apply`
-- `LockID = prod/terraform.tfstate`
+- `LockID = terraform.tfstate`
 
 ![DynamoDB Table Screenshot](db-table.png)
 
@@ -172,7 +172,7 @@ Add the following configuration:
 terraform {
   backend "s3" {
     bucket         = "kapil-prod-terraform-state-demo"
-    key            = "prod/terraform.tfstate"
+    key            = "terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "terraform-state-locks"
     encrypt        = true
@@ -275,7 +275,7 @@ This confirms:
 During the `terraform apply` execution, you will see a record like:
 
 ```
-LockID = prod/terraform.tfstate
+LockID = terraform.tfstate
 ```
 
 ## 🔎 What This Means
