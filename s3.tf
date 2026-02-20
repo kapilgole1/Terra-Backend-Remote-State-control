@@ -2,7 +2,7 @@
 
 resource "aws_s3_bucket" "Task-1-bucket" {
   bucket = "task-1-bucket-terraform-21-feb-2026"
-  
+  force_destroy = true
   tags = {
     Name        = "My-bucket"
   }
@@ -13,7 +13,7 @@ resource "aws_s3_bucket_versioning" "Task-1-bucket-versioning" {
   bucket = aws_s3_bucket.Task-1-bucket.id
 
   versioning_configuration {
-    status = "Enabled"
+    status = "Suspended"
   }
 }
 
