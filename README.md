@@ -39,7 +39,7 @@ Below screenshot confirms:
 - S3 bucket created
 - Versioning enabled
 - Encryption enabled
-- `prod/terraform.tfstate` file present
+- `terraform.tfstate` file present
 
 ![S3 Bucket Screenshot](bucket.png)
 
